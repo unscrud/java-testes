@@ -6,7 +6,7 @@ import dev.unscrud.tdd.modelo.Funcionario;
 
 public class ReajusteService {
   void concederReajuste(Funcionario funcionario, Desempenho desempenho) {
-    BigDecimal reajuste = funcionario.getSalario().multiply(new BigDecimal(desempenho.getPorcentagem()));
+    BigDecimal reajuste = funcionario.getSalario().multiply(desempenho.getPorcentagem());
     funcionario.reajustarSalario(reajuste);
   }
 }

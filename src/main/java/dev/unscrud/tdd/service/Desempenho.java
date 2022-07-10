@@ -1,5 +1,7 @@
 package dev.unscrud.tdd.service;
 
+import java.math.BigDecimal;
+
 public enum Desempenho {
   A_DESEJAR("0.03"),
   BOM("0.15"),
@@ -11,8 +13,8 @@ public enum Desempenho {
     this.porcentagem = porcentagem;
   }
 
-  public String getPorcentagem() {
-    return porcentagem;
+  public BigDecimal getPorcentagem() {
+    return new BigDecimal(porcentagem);
   }
 
 }
