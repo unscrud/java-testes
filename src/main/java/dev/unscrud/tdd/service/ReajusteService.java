@@ -15,6 +15,9 @@ public class ReajusteService {
       case BOM:
         reajuste = funcionario.getSalario().multiply(new BigDecimal("0.15"));
         break;
+      case OTIMO:
+        reajuste = funcionario.getSalario().multiply(new BigDecimal("0.2"));
+        break;
 
       default:
         reajuste = BigDecimal.ZERO;
