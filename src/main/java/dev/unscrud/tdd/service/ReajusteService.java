@@ -6,9 +6,20 @@ import dev.unscrud.tdd.modelo.Funcionario;
 
 public class ReajusteService {
   void concederReajuste(Funcionario funcionario, Desempenho desempenho) {
-    if (Desempenho.A_DESEJAR.equals(desempenho)) {
-      BigDecimal reajuste = funcionario.getSalario().multiply(new BigDecimal("0.03"));
-      funcionario.reajustarSalario(reajuste);
+    BigDecimal reajuste;
+
+    switch (desempenho) {
+      case A_DESEJAR:
+        reajuste = funcionario.getSalario().multiply(new BigDecimal("0.03"));
+        break;
+      case BOM:
+        reajuste = funcionario.getSalario().multiply(new BigDecimal("0.15"));
+        break;
+
+      default:
+        reajuste = BigDecimal.ZERO;
     }
+
+    funcionario.reajustarSalario(reajuste);
   }
 }
